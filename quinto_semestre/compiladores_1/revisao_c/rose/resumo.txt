@@ -1,0 +1,50 @@
+Revisão C
+    Linguagem C - Resumão
+        Programas C
+        Variáveis - Tipo de Identificadores
+        Saídas
+        Entradas
+
+--------------------------------
+Linguagem C - Resumão
+    Programas C
+        stdio.h
+            biblioteca padrão, funções como leitura do teclado, impressão da tela etc.
+    Variáveis - Tipo de Identificadores
+        tipo
+            número de bytes alocados
+            formato específico
+        nome_variavel
+            representa o endereço de memória para acessar o seu conteúdo
+        stack
+            porção da memória RAM, resposável pela alocação da dados do processo
+        bit memory map
+            cada endereço de memória pode alocar até 32 bits ou 2 bytes de informação
+                levando em consideração um modelo de 32 bits
+            ex:
+                para alocar um int é necessário apenas um endereço de memória
+                para alocar um char é necessário apenas um slot de memória do endereço de memória
+                para alocar um double é necessário dois endereços de memória
+            obs:
+                endereço de memória é diferente de slot de memória
+                    endereço de memória possui 4 slots de memória
+                        endereço de memória = 4 bytes
+                        um slot de memória = 8 bits
+    Saídas
+        printf()
+            imprime mensagens na tela
+            tabela dos espcificadores
+                int     %d
+                long    %ld
+                char    %c
+                float   %f
+                double  %lf 
+
+        assembly
+            gcc main.c -S
+            cat main.s
+    Entradas
+        scanf
+            as variáveis são passadas por referência do endereço de memória pelo símbolo &
+    Controle de fluxo: Condicional
+                        
