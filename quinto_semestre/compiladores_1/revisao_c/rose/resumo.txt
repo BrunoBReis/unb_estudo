@@ -46,5 +46,12 @@ Linguagem C - Resumão
     Entradas
         scanf
             as variáveis são passadas por referência do endereço de memória pelo símbolo &
-    Controle de fluxo: Condicional
+    Estrutra de dados homogêneos
+        Vetor ou Array Unidimensional
+            int x[5];
+                neste momento foi criado 5 espaços na memória com o mesmo nome de endereço: x
+                    cada uma das 5 partes de x pode ter um valor qualquer
+                    cada uma das 5 partes de x tem um endereço diferente de memória
+        
+                
                         
