@@ -52,6 +52,16 @@ Linguagem C - Resumão
                 neste momento foi criado 5 espaços na memória com o mesmo nome de endereço: x
                     cada uma das 5 partes de x pode ter um valor qualquer
                     cada uma das 5 partes de x tem um endereço diferente de memória
-        
+            NÃO ESTUDEI TODOS OS CASOS DA ARRAY UNIDIMENSIONAL
+        Vetor ou Arrya Multidimensional
+            int x[3][3];
+                forma uma matriz quadrada
+        String
+            as strings precisam terminar com '\0': o fim da string
+            exeplo de string
+                char x[6] = "bruno"; // adicionado +1 para o '\0'
+                %s = string;
+    Estrutra de dados heterogêneos
+
                 
                         
