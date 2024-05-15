@@ -61,7 +61,7 @@ Linguagem C - Resumão
             exeplo de string
                 char x[6] = "bruno"; // adicionado +1 para o '\0'
                 %s = string;
-    Estrutra de dados heterogêneos
+    Funções e Procedimentos
 
                 
                         

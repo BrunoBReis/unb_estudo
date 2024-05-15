@@ -21,7 +21,7 @@ int main(void)
         
     scanf("%5s", nome2);
 
-    scanf("%99s[^\n]", nome3);
+    scanf("%99[^\n]", nome3);
 
     printf("x = %s\nnome1 = %s\nnome2 = %s\nnome3 = %s", x, nome1, nome2, nome3);
     return 0;

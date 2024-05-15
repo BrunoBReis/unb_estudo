@@ -1,0 +1,12 @@
+Memória
+    Memória
+        Variáveis
+    Proesso x Memória
+-----------------------------
+Memória
+    conjunto de componentes eletrônicos
+        computador = [sistema binário(dados) + algebra de boole(lógica)] + 
+        + circuitos de comutação e conversão de dados
+    Variáveis
+        cada variável possui um endereço na memória
+            variáveis locais são armazenadas na stack (pilha)
