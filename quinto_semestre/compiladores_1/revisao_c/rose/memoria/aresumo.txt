@@ -1,6 +1,7 @@
 Memória
     Memória
         Variáveis
+        Ponteiros
     Proesso x Memória
 -----------------------------
 Memória
@@ -10,3 +11,9 @@ Memória
     Variáveis
         cada variável possui um endereço na memória
             variáveis locais são armazenadas na stack (pilha)
+        obs: printf("%p", (void *) &i); // representação em hexadecimal do endereço de i
+        obs: printf("%ld", (long int) &i); // representaçao em decimal do endereço de i
+    Ponteiros
+        variáveis capazes de armazenar e manipular endereços de memória
+        sintaxe: TIPO *ponteiro;
+        
