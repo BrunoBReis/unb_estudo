@@ -41,7 +41,7 @@ void vec(void)
 
     int teste[] = {1,2,3,4,5};
 
-    printf("endereço de x: %p valor de x: %p\n", &x, x);
+    printf("endereço de x: %p valor de x: %p\n", &x, x); // &x = x
     printf("endereço de x: %p valor de x: %d\n", &x[0], x[0]);
     printf("endereço de x: %p valor de x: %d\n", &x[1], x[1]);
     printf("endereço de x: %p valor de x: %d\n", &x[2], x[2]);

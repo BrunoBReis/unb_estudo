@@ -16,4 +16,9 @@ Memória
     Ponteiros
         variáveis capazes de armazenar e manipular endereços de memória
         sintaxe: TIPO *ponteiro;
-        
+        podem apontar para vetores
+        Diferença entre vetor e &vetor
+            ambos apontão para o mesmo espaço de memória e podem ser usados para armazenar Ponteiros
+            sizeof(vetor) = é referente ao tamanho do vetor como um todo
+            sizeof(&vetor) = é referente ao tamanho do ponteiro vetor de int
+            diferença está detalhada em array_uni_aprofundado.c    
