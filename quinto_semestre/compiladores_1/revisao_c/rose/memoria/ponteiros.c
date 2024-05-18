@@ -31,8 +31,16 @@ int main(void)
     // depois de referenciar
     printf("Depois de referenciar r = &p\n");
     printf("Valor de i = %d\n", i);
-    printf("Valor de p = %d\n", *p);
+    printf("Valor de p = %d\n", (*p));
     printf("Valor de r = %d\n", **r);
+
+    // realizando mais testes
+
+    printf("Teste final\n");
+    printf("Valor de i = %d\n", i);
+    printf("Valor de p = %d\n", *(p));
+    printf("Valor de r = %d\n", **(r));
+
     
     return 0;
 }

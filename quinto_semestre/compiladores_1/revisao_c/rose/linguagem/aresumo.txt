@@ -4,7 +4,7 @@ Revisão C
         Variáveis - Tipo de Identificadores
         Saídas
         Entradas
-
+Ainda não terminei de estudar tudo
 --------------------------------
 Linguagem C - Resumão
     Programas C

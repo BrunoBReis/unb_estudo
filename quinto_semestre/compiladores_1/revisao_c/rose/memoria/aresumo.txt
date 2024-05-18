@@ -2,7 +2,7 @@ Memória
     Memória
         Variáveis
         Ponteiros
-    Proesso x Memória
+    Processo x Memória
 -----------------------------
 Memória
     conjunto de componentes eletrônicos
@@ -21,4 +21,30 @@ Memória
             ambos apontão para o mesmo espaço de memória e podem ser usados para armazenar Ponteiros
             sizeof(vetor) = é referente ao tamanho do vetor como um todo
             sizeof(&vetor) = é referente ao tamanho do ponteiro vetor de int
-            diferença está detalhada em array_uni_aprofundado.c    
+                ou seja, independente da quantidade de valores que tenham no vetor
+                    o um ponteiro do vetor de int é sempre tem o mesmo tamanho
+            diferença está detalhada em array_uni_aprofundado.c
+Processo x Memória
+    Entendendo como funciona a partição de memória (do maior para o menor)
+        programa em execução: processo
+            cada processo possui uma porção de memória
+        Partições da memória
+            stack
+                variáveis locais (internas de uma função)
+            heap
+                blocos de memórias alocadas dinamicamente
+            data
+                variáveis globais (fora de funções)
+                variáveis estáticas 
+            text
+                código que está sendo executado
+    Alocação
+        Estática 
+            Alocação estática de memória - data
+                int a; // global - data
+                static int b; // estatica - data
+                int main() {...}
+                int soma() {
+                    static int c; // local estatica - heap
+                }
+        Dinâmica
