@@ -5,6 +5,7 @@ static int b = 0; // data - estática global; aloc. estática
 
 void incrementa(void)
 {
+    int d = 0; // stack - local; aloc. automatica
     static int c = 0; // stack - estática local; aloc. estática
     // alocada uma vez, mas válida após o término da função
 

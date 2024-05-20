@@ -48,3 +48,32 @@ Processo x Memória
                     static int c; // local estatica - heap
                 }
         Dinâmica
+Processo x Memória v2
+    Tipos de memória
+        Text
+            código do programa, permanece com o mesmo tamanho
+            mesmo tamanho
+        Data
+            memória do processo
+            variáveis globais e estáticas
+            mesmo tamanho
+        Stack
+            pilha de execução
+            parâmetros, endereços de retorno e variáveis locais de funções
+            pode variar
+        Heap
+            alocação dinâmica
+            varia de tamanho
+    Tipos de alocação de memória
+        Alocação estática
+            variáveis globais ou estáticas
+            data
+        Alocação automática
+            variáveis locais e parâmetros de funções
+                memória existe apenas na duração da função
+            stack
+        Alocação dinâmica
+            explicita o código para armazenar dados
+                controle manual ou automático
+                programdor é responsável por liberar espaço de memória
+            heap 

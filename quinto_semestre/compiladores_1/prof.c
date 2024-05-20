@@ -7,28 +7,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+// o que Q_st faz?
 typedef struct Q_st {
      char t;
      int *v;
 } Q_st;
 
+// tem como entrada dois vetores constantes e sem tipo 
 int compara(const void *a,const void *b) {
-	fprintf(stderr,"XXXX\n");
+	fprintf(stderr,"XXXX\n"); // não sei o que fprintf faz
 	fprintf(stderr,"xxxx: %s\n",*(const char **)a);
-	return strcmp( *(const char**)a,*(const char**)b);
+	return strcmp( *(const char**)a,*(const char**)b); // utiliza o strcmp para comparar os valores do char dos vetores a e b
+	// se o valor não for char a função não é executada?
 }
 
 int main(void)
 {
   int Qs;
-  scanf("%d",&Qs);
-  Q_st *estados=calloc(Qs,sizeof(Q_st));
+  scanf("%d",&Qs); // coletada da quantidade de estados
+  Q_st *estados=calloc(Qs,sizeof(Q_st)); // o que calloc faz?
 
   int Es;
   scanf("%d",&Es);
 
-  char **alfabeto;
-  alfabeto=calloc(Es,sizeof(char*));
+  char **alfabeto; // criação do alfabeto
+  alfabeto=calloc(Es,sizeof(char*)); // alocando o tamanho de char* em Es 
   for(int i=0;i<Es;i++){
 		char buffer[10];
 		scanf(" %s",buffer);
