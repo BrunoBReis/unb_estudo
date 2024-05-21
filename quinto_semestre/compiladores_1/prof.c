@@ -56,9 +56,9 @@ int main(void)
 		alfabeto[i] = strdup(buffer);
 	}
 
-	// porque usar o qsort?
+	// ordena o vetor do alfabeto sem alterar o endereço de memória
 	qsort(alfabeto, Es, sizeof(char *), compara);
-	// print de todos as letras de alfabeto
+	// verificação da ordem do alfabeto
 	printf("Meu alfabeto:");
 	for (int i = 0; i < Es; i++)
 		printf("[%s] ", alfabeto[i]);
@@ -70,6 +70,8 @@ int main(void)
 		estados[i].v = malloc(sizeof(int) * Es); // não deveria estar fora do loop?
 		for (int j = 0; j < Es; j++)
 			estados[i].v[j] = -1; // colocando -1 em todos os 
+			// estado 0 lendo o vetor a, alocando o estado que eu quero
+			// 0.a = (input)
 	}
 
 	int ds;
@@ -78,23 +80,35 @@ int main(void)
 	char s2;
 	for (int i = 0; i < ds; i++)
 	{
+		// estado atual
 		int e;
+		// consumindo e vou para e2
 		int e2;
 		scanf("%d %s %d", &e, simbolo, &e2);
+		// verificação da leitura
 		printf("D: %d %s %d\n", e, simbolo, e2);
+		// busca pelo endereço de memória do simbolo do alfebto 
 		char **p = bsearch(&simbolo, alfabeto, Es, sizeof(char *), compara);
-		unsigned long pv = (p - alfabeto) / 8;
-		estados[e].v[pv] = e2;
+		// pegando o index do simbolo atual
+		unsigned long pv = (p - alfabeto);
+		estados[e].v[pv] = e2; // alteração do -1 para o e2;
+		// b 100    a 100
+		// a 101 -> b 101
+		// c 102    c 102
 	}
 
+	// estado inicial
 	int qi;
 	scanf("%d", &qi);
+	// numero de estados finais
 	int Fs;
 	scanf("%d", &Fs);
 	for (int i = 0; i < Fs; i++)
 	{
+		// estado final atual
 		int q;
 		scanf("%d", &q);
+		// tal estado "q" será o estado final
 		estados[q].t = 'f';
 	}
 }
