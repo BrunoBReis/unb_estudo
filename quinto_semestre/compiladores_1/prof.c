@@ -18,9 +18,6 @@ typedef struct Q_st
 // função que compara dois ponteiros constantes e sem tipo
 int compara(const void *a, const void *b)
 {
-	// fprintf não é usado para ler o conteúdo de site?
-	fprintf(stderr, "XXXX\n");
-	fprintf(stderr, "xxxx: %s\n", *(const char **)a);
 	return strcmp(*(const char **)a, *(const char **)b);
 	// strcmp compara duas strings
 	// eu poderia usar o retunr assim
