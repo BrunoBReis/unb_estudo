@@ -8,67 +8,93 @@
 #include <stdlib.h>
 #include <string.h>
 
-// o que Q_st faz?
-typedef struct Q_st {
-     char t;
-     int *v;
+// O que é Q_st?
+typedef struct Q_st
+{
+	char t; // verificação do estado de transição 
+	int *v; // vetor de transições 
 } Q_st;
 
-// tem como entrada dois vetores constantes e sem tipo 
-int compara(const void *a,const void *b) {
-	fprintf(stderr,"XXXX\n"); // não sei o que fprintf faz
-	fprintf(stderr,"xxxx: %s\n",*(const char **)a);
-	return strcmp( *(const char**)a,*(const char**)b); // utiliza o strcmp para comparar os valores do char dos vetores a e b
-	// se o valor não for char a função não é executada?
+// função que compara dois ponteiros constantes e sem tipo
+int compara(const void *a, const void *b)
+{
+	// fprintf não é usado para ler o conteúdo de site?
+	fprintf(stderr, "XXXX\n");
+	fprintf(stderr, "xxxx: %s\n", *(const char **)a);
+	return strcmp(*(const char **)a, *(const char **)b);
+	// strcmp compara duas strings
+	// eu poderia usar o retunr assim
+	// strcmp(*(const char)a, *(const char)b);
 }
 
 int main(void)
 {
-  int Qs;
-  scanf("%d",&Qs); // coletada da quantidade de estados
-  Q_st *estados=calloc(Qs,sizeof(Q_st)); // o que calloc faz?
+	// quantidade de estados
+	int Qs;
+	scanf("%d", &Qs);
+	// criando um ponteiro de estados 
+	Q_st *estados;
+	// criando um vetor de tamanho Qs com Q_st de memória
+	estados = calloc(Qs, sizeof(Q_st));
+	// [f(vetor), 1, 2, 3]
 
-  int Es;
-  scanf("%d",&Es);
-
-  char **alfabeto; // criação do alfabeto
-  alfabeto=calloc(Es,sizeof(char*)); // alocando o tamanho de char* em Es 
-  for(int i=0;i<Es;i++){
+	// quantidade de símbolos do alfabeto
+	int Es;
+	scanf("%d", &Es);
+	// criando o ponteiro de alfabeto
+	char **alfabeto;
+	// criando um vetor de tamanho Es com um ponteiro de char?
+	alfabeto = calloc(Es, sizeof(char *));
+	
+	// Coleta dos símbolos do alfabeto
+	for (int i = 0; i < Es; i++)
+	{
+		// nome do simbolo
 		char buffer[10];
-		scanf(" %s",buffer);
-		alfabeto[i]=strdup(buffer);
-  }
+		scanf(" %s", buffer);
+		// salva a string de buffer no alfabeto[i]
+		alfabeto[i] = strdup(buffer);
+	}
 
-	qsort(alfabeto,Es,sizeof(char*),compara);
+	// porque usar o qsort?
+	qsort(alfabeto, Es, sizeof(char *), compara);
+	// print de todos as letras de alfabeto
 	printf("Meu alfabeto:");
-	for(int i=0;i<Es;i++) printf("[%s] ",alfabeto[i]);
+	for (int i = 0; i < Es; i++)
+		printf("[%s] ", alfabeto[i]);
 	printf("\n");
-	for(int i=0;i<Qs;i++){
-		estados[i].v=malloc(sizeof(int)*Es);
-		for(int j=0;j<Es;j++)
-			estados[i].v[j]=-1;
+	// não entendi o que isso está fazendo
+	for (int i = 0; i < Qs; i++)
+	{
+		// alocando o tamanho do int em quantidade de símbolos do alfabeto
+		estados[i].v = malloc(sizeof(int) * Es); // não deveria estar fora do loop?
+		for (int j = 0; j < Es; j++)
+			estados[i].v[j] = -1; // colocando -1 em todos os 
 	}
 
 	int ds;
-	scanf("%d",&ds);
-	char *simbolo=malloc(10);
+	scanf("%d", &ds);
+	char *simbolo = malloc(10);
 	char s2;
-	for(int i=0;i<ds;i++)
+	for (int i = 0; i < ds; i++)
 	{
-		int e; int e2;
-		scanf("%d %s %d",&e,simbolo,&e2);
-		printf("D: %d %s %d\n",e,simbolo,e2);
-		char **p=bsearch(&simbolo,alfabeto,Es,sizeof(char*),compara);
-		unsigned long pv=(p-alfabeto)/8;
-		estados[e].v[pv]=e2;
+		int e;
+		int e2;
+		scanf("%d %s %d", &e, simbolo, &e2);
+		printf("D: %d %s %d\n", e, simbolo, e2);
+		char **p = bsearch(&simbolo, alfabeto, Es, sizeof(char *), compara);
+		unsigned long pv = (p - alfabeto) / 8;
+		estados[e].v[pv] = e2;
 	}
 
-	int qi; scanf("%d",&qi);
+	int qi;
+	scanf("%d", &qi);
 	int Fs;
-	scanf("%d",&Fs);
-	for(int i=0;i<Fs;i++) {
+	scanf("%d", &Fs);
+	for (int i = 0; i < Fs; i++)
+	{
 		int q;
-		scanf("%d",&q);
-		estados[q].t='f';
+		scanf("%d", &q);
+		estados[q].t = 'f';
 	}
 }
